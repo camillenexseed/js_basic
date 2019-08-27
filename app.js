@@ -71,3 +71,62 @@ console.log(`私の所属先は、${schoolName}です`);
 let amount = 10000 * 1;
 let amount2 = 10000 * 1.1;
 console.log((amount2 - amount) * 12);
+
+
+console.log('----------------条件分岐----------------');
+// if (条件式) {
+//     処理;
+// }
+console.log('if文----------------');
+let int = 3;
+
+//比較演算子
+// <, <=, >, >=, ==,===, !=, !==
+
+// 値と型
+// 文字列
+// 整数
+// 小数点
+// true or false
+if (int !== '3') {
+  console.log(`${int}は3より大きいです。`);
+}
+
+//論理演算子
+// && ||
+
+console.log('else if----------------');
+
+int = 5;
+if (int >= 10) {
+  console.log(int + 'は10以上です')
+} else if (int > 3) {
+  console.log(`${int}は3より大きいです。`);
+} else {
+  console.log(`${int}は3以下です。`);
+}
+
+console.log('switch----------------');
+let signal = 'green';
+switch (signal) {
+  case 'red':
+    console.log('止まれ');
+    break;
+  case 'green':
+    console.log('すすめ');
+    break;
+  default:
+    console.log('そのほか');
+    break;
+}
+
+// 1. 変数を準備
+// 2. if分で分岐
+// 3. 3で割り切れる数の時はBuzzを出力してそれ以外は変数をそのままconsole.log出力します。
+
+let number = 8;
+if (number % 5 === 0) {
+  console.log('Buzz');
+} else {
+  console.log(number);
+}
