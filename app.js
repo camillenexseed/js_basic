@@ -308,3 +308,118 @@ console.log(student_list);
 
 // 関数化
 // ネットフィリックスとアマゾンプライムの合計
+
+console.log('----------------連想配列----------------');
+
+let user = {
+  food: 'ラーメン',
+  age: 38,
+  from: '沖縄'
+};
+console.log(user);
+console.log(user['food']);
+
+let user2 = {
+  food: 'UFO',
+  age: 20,
+  from: '沖縄'
+}
+
+console.log('----------------2次元配列----------------');
+
+let users = [user, user2];
+console.log(users);
+console.log(users[1]['age']);
+console.log(users[1].from);
+
+let player = { 1: '内川' }
+let player2 = { 1: '鈴木' }
+
+let players = { softbank: player, carp: player2 };
+// console.log(players.carp[1]);
+
+// チーム名と背番号から選手名を出力する関数を作りましょう
+
+function show_player(team, number) {
+  let player = players[team][number];
+  return player;
+}
+
+console.log(show_player('carp', 1));
+
+console.log('----------------メソッド----------------');
+let user3 = {
+  food: 'sushi',
+  age: 27,
+  from: '広島',
+  greet: function (name) {//メソッド
+    console.log("Hello I'm, " + name + " from " + this.from);
+  }
+}
+user3.greet('Camille');
+
+console.log('----------------組み込みオブジェクト----------------');
+console.log('文字列----------------');
+let str = "Camille";
+console.log(str.length);
+console.log(str.substr(1, 1));
+
+console.log('配列----------------');
+let arr = [1, 2, 3, 7, 8];
+console.log(arr.length);
+arr.push(4);
+console.log(arr);
+arr.splice(1, 0, 1.5);
+console.log(arr);
+// 4番目から1つ置き換える
+// 3.9
+arr.splice(3, 1, 3.9);
+console.log(arr);
+
+console.log('数値----------------');
+// Math関数
+// 繰り上げ
+console.log(Math.ceil(3.3));
+// 切り捨て
+console.log(Math.floor(3.3));
+// 四捨五入
+console.log(Math.round(3.4));
+
+console.log(Math.random());
+// 0 ~ 9 までの乱数を発生することができます
+console.log(Math.floor(Math.random() * 10));
+// 0 ~ 5 まで
+// console.log(Math.floor(Math.random() * 5));
+
+// 配列
+omikuji = ['大吉', '中吉', '吉', '小吉', '凶'];
+// 乱数の結果を変数に入れる
+// おみくじの結果を表示
+let random_num = Math.random() * 5;
+let omikuji_num = Math.floor(random_num);
+console.log(omikuji[omikuji_num]);
+
+console.log('日付----------------');
+// let day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Stu'];
+// let date = new Date();
+// console.log(date);
+// console.log(date.getFullYear());
+// console.log(date.getMonth() + 1);
+// console.log(date.getDate());
+// console.log(day[date.getDay()]);
+
+// 「今日は　年　月　日　曜日です」と出力する
+// 各値をyeaar,month,date,dayに一旦格納する
+
+let Days = ['日', '月', '火', '水', '木', '金', '土'];
+
+let today = new Date();
+// 西暦
+let year = today.getFullYear();
+// 月
+let month = today.getMonth() + 1;
+// 日にち
+let date = today.getDate();
+let day = Days[today.getDay()];
+
+console.log('今日は' + year + '年' + month + '月' + date + '日' + day + '曜日です。');
